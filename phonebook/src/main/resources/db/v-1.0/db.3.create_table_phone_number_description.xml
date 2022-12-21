@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+    <changeSet id="create-table-phone_number-description" author="Lazareva">
+        <createTable tableName="phone_number_description">
+            <column name="phone_number" type="varchar(15)">
+                <constraints foreignKeyName="phone_number_phone_data_phone_number_number" references="phone_data(number)"/>
+            </column>
+            <column name="descriptions" type="varchar(64)">
+            <constraints foreignKeyName="descriptions_phone_number_description_description_id" references="description(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
